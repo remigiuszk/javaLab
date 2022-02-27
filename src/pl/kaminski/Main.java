@@ -1,8 +1,15 @@
 package pl.kaminski;
 
+import pl.kaminski.Model.Animal;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        Animal doggo = new Animal("dog");
+        doggo.feed();
+        doggo.takeForAWalk();
+        doggo.takeForAWalk();
+        doggo.takeForAWalk();
+        doggo.feed();
     }
 }
