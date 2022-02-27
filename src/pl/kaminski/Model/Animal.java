@@ -1,6 +1,6 @@
 package pl.kaminski.Model;
 
-public class Animal {
+public class Animal implements ISellable {
     private final String spieces;
     private Double weight;
     private Boolean isAlive;
@@ -47,5 +47,16 @@ public class Animal {
                 ", weight=" + weight +
                 ", isAlive=" + isAlive +
                 '}';
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+        if(seller.pet != this) throw new Exception("Seller does not have a pet that is the subject of the transaction");
+        if(buyer.getCash() < price) throw new Exception("Buyer does not have enough cash");
+        buyer.setCash(buyer.getCash() - price);
+        seller.setCash(seller.getCash() + price);
+        seller.pet = null;
+        buyer.pet = this;
+        System.out.println(this.toString() + "\nhas been sold to\n " + buyer.toString() + "\nfrom "+seller.toString() + "\nfor " + price.toString());
     }
 }

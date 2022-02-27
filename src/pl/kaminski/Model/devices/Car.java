@@ -15,7 +15,7 @@ public class Car extends Device {
     }
 
     @Override
-    public void TurnOn() {
+    public void turnOn() {
         isTurnedOn = true;
     }
 

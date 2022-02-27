@@ -1,6 +1,7 @@
 package pl.kaminski.Model;
 
 import pl.kaminski.Model.devices.Car;
+import pl.kaminski.Model.devices.Device;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -8,9 +9,27 @@ import java.time.temporal.ChronoUnit;
 public class Human {
     public Animal pet;
     private Car car;
+    private Device device;
     private LocalDateTime lastChecked;
     private Double previousSalaryValue;
     private Double salary;
+    private Double cash;
+
+    public Device getDevice() {
+        return device;
+    }
+
+    public void setDevice(Device device) {
+        this.device = device;
+    }
+
+    public Double getCash() {
+        return cash;
+    }
+
+    public void setCash(double cash){
+        this.cash = cash;
+    }
 
     public Double getSalary() {
         if(lastChecked != null){
@@ -54,9 +73,11 @@ public class Human {
         return "Human{" +
                 "pet=" + pet +
                 ", car=" + car +
+                ", device=" + device +
                 ", lastChecked=" + lastChecked +
                 ", previousSalaryValue=" + previousSalaryValue +
                 ", salary=" + salary +
+                ", cash=" + cash +
                 '}';
     }
 }

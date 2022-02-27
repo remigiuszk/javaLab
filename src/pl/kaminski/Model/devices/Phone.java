@@ -7,7 +7,7 @@ public class Phone extends Device {
     }
 
     @Override
-    public void TurnOn() {
+    public void turnOn() {
         isTurnedOn = true;
     }
 
