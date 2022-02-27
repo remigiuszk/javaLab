@@ -5,7 +5,7 @@ import java.time.temporal.ChronoUnit;
 
 public class Human {
     public Animal pet;
-    public Car car;
+    private Car car;
     private LocalDateTime lastChecked;
     private Double previousSalaryValue;
     private Double salary;
@@ -26,6 +26,24 @@ public class Human {
             System.out.println("Get new documents from Hania from HR");
             System.out.println("ZUS and US know about your new salary, no need to hide");
             this.salary = salary;
+        }
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        if(salary > car.getValue()) {
+            System.out.println("Bought with cash");
+            this.car = car;
+        }
+        else if(salary > car.getValue()/12) {
+            System.out.println("Bought with a loan(welp)");
+            this.car = car;
+        }
+        else{
+            System.out.println("Get a raise bruh");
         }
     }
 }

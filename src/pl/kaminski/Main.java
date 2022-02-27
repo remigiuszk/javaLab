@@ -9,21 +9,15 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         Human me = new Human();
 
-        me.pet = new Animal("dog");
-        me.pet.feed();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
-        me.pet.feed();
-
-        me.car =  new Car("golf", "WW", "black");
+        Car golf =  new Car("golf", "WW", "black", 1200.0);
 
         me.setSalary(12.0);
-        me.getSalary();
+        me.setCar(golf);
 
-        Thread.sleep(2000);
+        me.setSalary(200.0);
+        me.setCar(golf);
 
-        me.setSalary(17.0);
-        me.getSalary();
+        me.setCar(new Car("126p", "fiat", "green", 120.0));
+
     }
 }
