@@ -1,14 +1,11 @@
 package pl.kaminski.Model.devices;
 
-public class Car {
-    private final String model;
-    private final String producer;
+public class Car extends Device {
     private String color;
     private Double value;
 
-    public Car(String model, String producer, String color, Double value) {
-        this.model = model;
-        this.producer = producer;
+    public Car(String model, String producer,Integer yearOfProduction, String color, Double value) {
+        super(model, producer, yearOfProduction);
         this.color = color;
         this.value = value;
     }
@@ -18,12 +15,19 @@ public class Car {
     }
 
     @Override
+    public void TurnOn() {
+        isTurnedOn = true;
+    }
+
+    @Override
     public String toString() {
         return "Car{" +
-                "model='" + model + '\'' +
-                ", producer='" + producer + '\'' +
-                ", color='" + color + '\'' +
+                "color='" + color + '\'' +
                 ", value=" + value +
+                ", model='" + model + '\'' +
+                ", producer='" + producer + '\'' +
+                ", yearOfProduction=" + yearOfProduction +
+                ", isTurnedOn=" + isTurnedOn +
                 '}';
     }
 }

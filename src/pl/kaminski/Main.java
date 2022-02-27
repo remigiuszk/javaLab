@@ -3,20 +3,16 @@ package pl.kaminski;
 import pl.kaminski.Model.Animal;
 import pl.kaminski.Model.Human;
 import pl.kaminski.Model.devices.Car;
+import pl.kaminski.Model.devices.Phone;
 
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
-        Car golf = new Car("golf", "WW", "black", 1200.0);
-        Car golf2 = new Car("golf", "WW", "black", 1200.0);
+        Phone motorola = new Phone("razor", "motorola", 2011);
+        System.out.println(motorola.toString());
 
-        Human human = new Human();
-        Animal dog = new Animal("dog");
-
-        System.out.println(golf == golf2);
-        System.out.println(golf.toString());
-        System.out.println(golf.toString().equals(golf2.toString()));
-        System.out.println(human.toString());
-        System.out.println(dog.toString());
+        Car golf = new Car("golf", "ww", 2012, "red", 3000.0);
+        golf.TurnOn();
+        System.out.println(golf);
     }
 }
