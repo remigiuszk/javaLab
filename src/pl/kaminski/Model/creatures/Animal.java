@@ -1,6 +1,9 @@
-package pl.kaminski.Model;
+package pl.kaminski.Model.creatures;
 
-public class Animal implements ISellable {
+import pl.kaminski.Model.Human;
+import pl.kaminski.Model.ISellable;
+
+public abstract class Animal implements ISellable, IFeedable {
     private final String spieces;
     private Double weight;
     private Boolean isAlive;
@@ -15,7 +18,25 @@ public class Animal implements ISellable {
                 weight = 2.0;
             case "hamster":
                 weight = 1.0;
+            case "cow":
+                weight = 10.0;
         }
+    }
+
+    public Double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Double weight) {
+        this.weight = weight;
+    }
+
+    public Boolean getAlive() {
+        return isAlive;
+    }
+
+    public void setAlive(Boolean alive) {
+        isAlive = alive;
     }
 
     public void feed() {
@@ -25,6 +46,16 @@ public class Animal implements ISellable {
             weight++;
             System.out.println("Animal fed, current weight: " + weight.toString());
         }
+    }
+
+    public void feed(Double foodWeight){
+        if(!isAlive)
+            System.out.println("The animal is dead, you monster...");
+        else {
+            weight += foodWeight;
+            System.out.println("Animal fed, current weight: " + weight.toString());
+        }
+
     }
 
     public void takeForAWalk() {

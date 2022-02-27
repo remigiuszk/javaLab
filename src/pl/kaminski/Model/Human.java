@@ -1,5 +1,6 @@
 package pl.kaminski.Model;
 
+import pl.kaminski.Model.creatures.Animal;
 import pl.kaminski.Model.devices.Car;
 import pl.kaminski.Model.devices.Device;
 

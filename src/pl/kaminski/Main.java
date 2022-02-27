@@ -1,21 +1,19 @@
 package pl.kaminski;
 
 import pl.kaminski.Model.Human;
+import pl.kaminski.Model.creatures.FarmAnimal;
 import pl.kaminski.Model.devices.Phone;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        Phone motorola = new Phone("razor", "motorola", 2011);
+        FarmAnimal cow = new FarmAnimal("cow");
 
-        Human me = new Human();
+        System.out.println(cow.getWeight().toString());
+        cow.feed(12.0);
+        System.out.println(cow.getWeight().toString());
 
-        Human you = new Human();
-
-        me.setDevice(motorola);
-        me.setCash(0);
-        you.setCash(10);
-
-        motorola.sell(me, you, 10.0);
+        cow.beEaten();
+        System.out.println(cow.toString());
     }
 }
