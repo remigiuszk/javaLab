@@ -19,7 +19,7 @@ public class Animal {
     }
 
     public void feed() {
-        if(!isAlive)
+        if (!isAlive)
             System.out.println("The animal is dead, you monster...");
         else {
             weight++;
@@ -27,17 +27,25 @@ public class Animal {
         }
     }
 
-    public void takeForAWalk(){
-        if(!isAlive)
+    public void takeForAWalk() {
+        if (!isAlive)
             System.out.println("The animal is dead, you monster...");
-        else{
+        else {
             weight--;
             System.out.println("Animal taken for a walk, current weight: " + weight.toString());
-            if(weight < 0) {
+            if (weight < 0) {
                 isAlive = false;
                 System.out.println("Your animal died.");
             }
         }
     }
 
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "spieces='" + spieces + '\'' +
+                ", weight=" + weight +
+                ", isAlive=" + isAlive +
+                '}';
+    }
 }

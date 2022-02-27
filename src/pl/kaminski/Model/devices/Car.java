@@ -1,4 +1,4 @@
-package pl.kaminski.Model;
+package pl.kaminski.Model.devices;
 
 public class Car {
     private final String model;
@@ -15,5 +15,15 @@ public class Car {
 
     public Double getValue() {
         return value;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "model='" + model + '\'' +
+                ", producer='" + producer + '\'' +
+                ", color='" + color + '\'' +
+                ", value=" + value +
+                '}';
     }
 }

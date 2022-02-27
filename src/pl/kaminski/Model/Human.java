@@ -1,5 +1,7 @@
 package pl.kaminski.Model;
 
+import pl.kaminski.Model.devices.Car;
+
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
@@ -45,5 +47,16 @@ public class Human {
         else{
             System.out.println("Get a raise bruh");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "pet=" + pet +
+                ", car=" + car +
+                ", lastChecked=" + lastChecked +
+                ", previousSalaryValue=" + previousSalaryValue +
+                ", salary=" + salary +
+                '}';
     }
 }
